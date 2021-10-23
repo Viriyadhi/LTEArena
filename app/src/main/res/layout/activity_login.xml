@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".LoginActivity">
 
     <RelativeLayout
@@ -12,6 +13,7 @@
         android:layout_height="700px"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="37dp"
+        android:fontFamily="@font/regular"
         android:layout_marginRight="100dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/feature"
@@ -25,6 +27,7 @@
     <RelativeLayout
         android:id="@+id/relative"
         android:layout_width="match_parent"
+        android:fontFamily="@font/regular"
         android:layout_height="match_parent"
         android:layout_below="@+id/header"
         android:background="@drawable/container_radius"
@@ -34,6 +37,7 @@
             android:id="@+id/welcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="5dp"
@@ -45,6 +49,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_username"
             style="@style/LoginTextInputLayoutStyle"
+            android:fontFamily="@font/regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/welcome"
@@ -63,6 +68,7 @@
                 android:id="@+id/txt_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
                 android:layout_gravity="center"
                 android:inputType="text"
                 android:textColor="@color/white" />
@@ -73,6 +79,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_password"
             style="@style/LoginTextInputLayoutStyle"
+            android:fontFamily="@font/regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/layout_username"
@@ -85,12 +92,14 @@
             app:boxCornerRadiusBottomStart="9dp"
             app:boxCornerRadiusTopEnd="9dp"
             app:boxCornerRadiusTopStart="9dp"
-android:layout_marginTop="17dp"
+            android:layout_marginTop="17dp"
             app:boxStrokeColor="@color/white">
 
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txt_password"
+                android:fontFamily="@font/regular"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -102,6 +111,8 @@ android:layout_marginTop="17dp"
 
         <Button
             android:id="@+id/login"
+            android:fontFamily="@font/regular"
+
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_below="@id/layout_password"
@@ -115,6 +126,8 @@ android:layout_marginTop="17dp"
 
         <TextView
             android:id="@id/other_method"
+            android:fontFamily="@font/regular"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/login"
@@ -126,6 +139,8 @@ android:layout_marginTop="17dp"
 
         <Button
             android:id="@+id/other"
+            android:fontFamily="@font/regular"
+
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_below="@+id/other_method"
@@ -140,6 +155,8 @@ android:layout_marginTop="17dp"
 
         <View
             android:id="@+id/garis"
+            android:fontFamily="@font/regular"
+
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_below="@id/other"
@@ -150,6 +167,7 @@ android:layout_marginTop="17dp"
 
         <TextView
             android:id="@+id/signup"
+            android:fontFamily="@font/regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/garis"
