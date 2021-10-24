@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.209" />
+        <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/layout/activity_login.xml" value="0.2015625" />
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/layout/activity_main.xml" value="0.2015625" />
-        <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/layout/activity_sign_up.xml" value="0.1875" />
+        <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
       </map>
     </option>
   </component>
