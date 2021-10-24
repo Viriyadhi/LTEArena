@@ -47,13 +47,12 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layout_username"
-            style="@style/LoginTextInputLayoutStyle"
+            android:id="@+id/layout_email"
             android:fontFamily="@font/regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/create"
-            android:hint="Username"
+            android:hint="Email"
             android:layout_marginHorizontal="10dp"
             android:textColorHint="@color/white"
             app:boxCornerRadiusBottomEnd="9dp"
@@ -68,8 +67,8 @@
                 android:id="@+id/txt_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/regular"
                 android:layout_gravity="center"
+                android:fontFamily="@font/regular"
                 android:inputType="text"
                 android:textColor="@color/white" />
 
@@ -78,11 +77,11 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_password"
-            style="@style/LoginTextInputLayoutStyle"
+
             android:fontFamily="@font/regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/layout_username"
+            android:layout_below="@id/layout_email"
             android:layout_marginBottom="15dp"
             android:hint="Password"
             android:layout_marginHorizontal="10dp"
@@ -99,6 +98,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txt_password"
                 android:fontFamily="@font/regular"
+
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
