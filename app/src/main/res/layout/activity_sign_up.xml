@@ -12,10 +12,10 @@
         android:layout_height="700px"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="37dp"
-        android:fontFamily="@font/regular"
         android:layout_marginRight="100dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/feature"
+        android:fontFamily="@font/regular"
         android:orientation="vertical"
         android:textColor="@color/white">
 

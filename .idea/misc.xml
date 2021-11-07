@@ -6,10 +6,13 @@
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.333" />
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/drawable/container_radius.xml" value="0.333" />
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/drawable/ic_launcher_background.xml" value="0.333" />
+        <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/drawable/ic_ltearena_logo_1.xml" value="0.209" />
+        <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/drawable/logo.xml" value="0.209" />
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/drawable/text_field_color.xml" value="0.1745" />
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/layout/activity_main.xml" value="0.2015625" />
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
+        <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/layout/splash_screen.xml" value="0.18" />
       </map>
     </option>
   </component>
