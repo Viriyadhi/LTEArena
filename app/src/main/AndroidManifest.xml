@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LTEArena">
         <activity
+            android:name=".SplashScreen"
+            android:exported="true" />
+        <activity
             android:name=".SignUp"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +24,6 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
-
     </application>
 
 </manifest>
