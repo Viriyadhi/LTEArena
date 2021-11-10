@@ -2,26 +2,27 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/card_view"
     android:layout_margin="10dp"
+    android:background="@drawable/card_view"
     android:orientation="vertical"
     >
-
-
     <RelativeLayout
-        android:id="@+id/grid_layout_list"
+        android:id="@+id/grid_detail_home"
         android:layout_width="match_parent"
         android:layout_height="145dp"
         android:padding="15dp"
         >
 
 
-        <ImageView
-            android:id="@+id/poster"
-            android:layout_width="150dp"
-            android:layout_height="300dp"
+        <TextView
+            android:id="@+id/name_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:src="@drawable/ic_launcher_background"
+            android:gravity="center"
+            android:text="Test Wadidaw nama HP"
+            android:textSize="20dp"
+            android:textColor="@color/white"
             />
 
 
