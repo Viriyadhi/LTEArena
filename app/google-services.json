@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "232266080253",
+    "project_id": "ltearena",
+    "storage_bucket": "ltearena.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232266080253:android:4386b6e6f23dd5d621c394",
+        "android_client_info": {
+          "package_name": "com.example.ltearena"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "232266080253-q8m72u3ch9fupui280v4ltn4b00hsc0v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMQ3Vi7lr_wqGz3lBqrmzbdnVsZkjNFEo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "232266080253-q8m72u3ch9fupui280v4ltn4b00hsc0v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
