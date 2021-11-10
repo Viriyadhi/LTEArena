@@ -16,7 +16,7 @@
         android:fontFamily="@font/regular"
         android:layout_marginRight="100dp"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/feature"
+        android:background="@drawable/assets"
         android:orientation="vertical"
         android:textColor="@color/white">
         >
@@ -27,20 +27,20 @@
     <RelativeLayout
         android:id="@+id/relative"
         android:layout_width="match_parent"
-        android:fontFamily="@font/regular"
         android:layout_height="match_parent"
         android:layout_below="@+id/header"
-        android:background="@drawable/container_radius"
+        android:background="@drawable/background_primary"
+        android:fontFamily="@font/regular"
         android:textColor="@color/white">
 
         <TextView
             android:id="@+id/welcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/regular"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="5dp"
+            android:fontFamily="@font/regular"
             android:text="Welcome !"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -49,17 +49,18 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_username"
             style="@style/LoginTextInputLayoutStyle"
-            android:fontFamily="@font/regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/welcome"
-            android:hint="Username"
             android:layout_marginHorizontal="10dp"
+            android:fontFamily="@font/regular"
+            android:hint="Username"
             android:textColorHint="@color/white"
             app:boxCornerRadiusBottomEnd="9dp"
             app:boxCornerRadiusBottomStart="9dp"
             app:boxCornerRadiusTopEnd="9dp"
             app:boxCornerRadiusTopStart="9dp"
+            app:hintTextColor="@color/white"
 
             >
 
@@ -68,8 +69,8 @@
                 android:id="@+id/txt_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/regular"
                 android:layout_gravity="center"
+                android:fontFamily="@font/regular"
                 android:inputType="text"
                 android:textColor="@color/white" />
 
@@ -79,45 +80,47 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_password"
             style="@style/LoginTextInputLayoutStyle"
-            android:fontFamily="@font/regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/layout_username"
-            android:layout_marginBottom="15dp"
-            android:hint="Password"
             android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginBottom="15dp"
+
+            android:fontFamily="@font/regular"
+            android:hint="Password"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             app:boxCornerRadiusBottomEnd="9dp"
             app:boxCornerRadiusBottomStart="9dp"
             app:boxCornerRadiusTopEnd="9dp"
             app:boxCornerRadiusTopStart="9dp"
-            android:layout_marginTop="17dp"
-            app:boxStrokeColor="@color/white">
+            app:boxStrokeColor="@color/white"
+            app:hintTextColor="@color/white">
 
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txt_password"
-                android:fontFamily="@font/regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="@color/white"
-                android:inputType="textPassword" />
+                android:fontFamily="@font/regular"
+                android:inputType="textPassword"
+                android:textColor="@color/white" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <Button
             android:id="@+id/login"
-            android:fontFamily="@font/regular"
-
             android:layout_width="match_parent"
+
             android:layout_height="60dp"
             android:layout_below="@id/layout_password"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:backgroundTint="@color/white"
+            android:fontFamily="@font/regular"
             android:text="Login"
             android:textAllCaps="false"
             android:textColor="@color/primary"
@@ -125,12 +128,12 @@
 
         <TextView
             android:id="@id/other_method"
-            android:fontFamily="@font/regular"
-
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
             android:layout_below="@id/login"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/regular"
             android:gravity="center_horizontal"
             android:text="Other method"
             android:textColor="@color/white"
@@ -138,15 +141,15 @@
 
         <Button
             android:id="@+id/other"
-            android:fontFamily="@font/regular"
-
             android:layout_width="match_parent"
+
             android:layout_height="60dp"
             android:layout_below="@+id/other_method"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:backgroundTint="@color/white"
+            android:fontFamily="@font/regular"
             android:text="Continue With Google"
             android:textAllCaps="false"
             android:textColor="@color/primary"
@@ -154,26 +157,26 @@
 
         <View
             android:id="@+id/garis"
-            android:fontFamily="@font/regular"
-
             android:layout_width="match_parent"
+
             android:layout_height="1dp"
             android:layout_below="@id/other"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="50dp"
-            android:layout_marginLeft="50dp"
-            android:background="@color/white" />
+            android:background="@color/white"
+            android:fontFamily="@font/regular" />
 
         <TextView
             android:id="@+id/signup"
-            android:fontFamily="@font/regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/garis"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/regular"
             android:gravity="center"
-            android:textColor="@color/white"
-            android:text="Don’t have an account? Sign Up" />
+            android:text="Don’t have an account? Sign Up"
+            android:textColor="@color/white" />
 
     </RelativeLayout>
 

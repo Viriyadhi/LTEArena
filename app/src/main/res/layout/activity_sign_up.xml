@@ -14,7 +14,7 @@
         android:layout_marginTop="37dp"
         android:layout_marginRight="100dp"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/feature"
+        android:background="@drawable/assets"
         android:fontFamily="@font/regular"
         android:orientation="vertical"
         android:textColor="@color/white">
@@ -28,7 +28,7 @@
         android:fontFamily="@font/regular"
         android:layout_height="match_parent"
         android:layout_below="@+id/header"
-        android:background="@drawable/container_radius"
+        android:background="@drawable/background_primary"
         android:textColor="@color/white">
 
         <TextView
@@ -118,7 +118,8 @@
             app:boxCornerRadiusBottomStart="9dp"
             app:boxCornerRadiusTopEnd="9dp"
             app:boxCornerRadiusTopStart="9dp"
-            app:boxStrokeColor="@color/white"> app:hintTextColor="@color/white"
+            app:boxStrokeColor="@color/white"
+            app:hintTextColor="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txt_nomor"
@@ -179,21 +180,21 @@
 
         <View
             android:id="@+id/garis"
-            android:fontFamily="@font/regular"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_below="@id/signup_btn"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="50dp"
             android:layout_marginLeft="50dp"
-            android:background="@color/white" />
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="50dp"
+            android:background="@color/white"
+            android:fontFamily="@font/regular" />
 
         <TextView
             android:id="@+id/signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/garis"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/regular"
             android:gravity="center"
             android:text="Already have an account? Login"

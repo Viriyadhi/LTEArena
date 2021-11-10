@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#889EAF</color>
     <color name="secondary">#AEBBC5</color>
+    <color name="text">#2F4B60</color>
 
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#fff</color>
 </resources>
