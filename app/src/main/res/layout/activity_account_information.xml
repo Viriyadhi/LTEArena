@@ -9,20 +9,19 @@
 
 
   <ImageButton
-      android:id="@+id/button_back"
+      android:id="@+id/button_back_account"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      android:layout_marginLeft="-320dp"
       android:layout_marginTop="23dp"
       android:background="@color/white"
-      android:src="@drawable/logo_back"
-     android:layout_marginLeft="-320dp"
-      />
+      android:src="@drawable/logo_back" />
 
   <ImageButton
-      android:id="@+id/profile_picture"
+      android:id="@+id/profile_picture_account"
       android:layout_width="146dp"
       android:layout_height="155dp"
-      android:layout_below="@id/button_back"
+      android:layout_below="@id/button_back_account"
       android:layout_marginHorizontal="135dp"
       android:layout_marginTop="40dp"
       android:background="@color/white"
@@ -33,7 +32,7 @@
       android:id="@+id/layout_current_email"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_below="@id/profile_picture"
+      android:layout_below="@id/profile_picture_account"
       android:layout_marginHorizontal="15dp"
       android:layout_marginTop="30dp"
       android:fontFamily="@font/regular"
@@ -42,9 +41,9 @@
       app:boxCornerRadiusBottomStart="9dp"
       app:boxCornerRadiusTopEnd="9dp"
       app:boxCornerRadiusTopStart="9dp"
-      android:textColorHint="@color/black"
-      app:boxStrokeColor="@color/black"
-      app:hintTextColor="@color/black"
+      android:textColorHint="@color/text"
+      app:boxStrokeColor="@color/text"
+      app:hintTextColor="@color/text"
      >
 
 
@@ -55,7 +54,7 @@
         android:layout_gravity="center"
         android:fontFamily="@font/regular"
         android:inputType="textEmailAddress"
-        android:textColor="@color/black"
+        android:textColor="@color/text"
        />
 
   </com.google.android.material.textfield.TextInputLayout>
@@ -73,9 +72,9 @@
       app:boxCornerRadiusBottomStart="9dp"
       app:boxCornerRadiusTopEnd="9dp"
       app:boxCornerRadiusTopStart="9dp"
-      android:textColorHint="@color/black"
-      app:boxStrokeColor="@color/black"
-      app:hintTextColor="@color/black">
+      android:textColorHint="@color/text"
+      app:boxStrokeColor="@color/text"
+      app:hintTextColor="@color/text">
 
 
     <com.google.android.material.textfield.TextInputEditText
@@ -85,7 +84,7 @@
         android:layout_gravity="center"
         android:fontFamily="@font/regular"
         android:inputType="textEmailAddress"
-        android:textColor="@color/black" />
+        android:textColor="@color/text" />
 
   </com.google.android.material.textfield.TextInputLayout>
 
@@ -102,9 +101,9 @@
       app:boxCornerRadiusBottomStart="9dp"
       app:boxCornerRadiusTopEnd="9dp"
       app:boxCornerRadiusTopStart="9dp"
-      android:textColorHint="@color/black"
-      app:boxStrokeColor="@color/black"
-      app:hintTextColor="@color/black">
+      android:textColorHint="@color/text"
+      app:boxStrokeColor="@color/text"
+      app:hintTextColor="@color/text">
 
 
     <com.google.android.material.textfield.TextInputEditText
@@ -114,7 +113,7 @@
         android:layout_gravity="center"
         android:fontFamily="@font/regular"
         android:inputType="textEmailAddress"
-        android:textColor="@color/black"
+        android:textColor="@color/text"
 
         />
 
@@ -133,9 +132,9 @@
       app:boxCornerRadiusBottomStart="9dp"
       app:boxCornerRadiusTopEnd="9dp"
       app:boxCornerRadiusTopStart="9dp"
-      android:textColorHint="@color/black"
-      app:boxStrokeColor="@color/black"
-      app:hintTextColor="@color/black">
+      android:textColorHint="@color/text"
+      app:boxStrokeColor="@color/text"
+      app:hintTextColor="@color/text">
 
 
     <com.google.android.material.textfield.TextInputEditText
@@ -145,7 +144,7 @@
         android:layout_gravity="center"
         android:fontFamily="@font/regular"
         android:inputType="textPassword"
-        android:textColor="@color/black"
+        android:textColor="@color/text"
 
         />
 
@@ -164,9 +163,9 @@
       android:layout_marginTop="14dp"
       app:boxCornerRadiusTopEnd="9dp"
       app:boxCornerRadiusTopStart="9dp"
-      android:textColorHint="@color/black"
-      app:boxStrokeColor="@color/black"
-      app:hintTextColor="@color/black">
+      android:textColorHint="@color/text"
+      app:boxStrokeColor="@color/text"
+      app:hintTextColor="@color/text">
 
 
     <com.google.android.material.textfield.TextInputEditText
@@ -176,7 +175,7 @@
         android:layout_gravity="center"
         android:fontFamily="@font/regular"
         android:inputType="textPassword"
-        android:textColor="@color/black"
+        android:textColor="@color/text"
 
         />
 
@@ -188,11 +187,10 @@
       android:layout_height="55dp"
       android:layout_below="@id/layout_new_password"
       android:layout_marginHorizontal="17dp"
-      android:fontFamily="@font/regular"
       android:layout_marginTop="61dp"
+      android:fontFamily="@font/regular"
       android:text="Confirm"
       android:textAlignment="center"
-
       android:textColor="@color/text" />
 
   </RelativeLayout>
