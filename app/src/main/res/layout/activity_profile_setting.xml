@@ -7,17 +7,17 @@
     tools:context=".ProfileSettingActivity">
 
     <ImageButton
-        android:id="@+id/button_back"
+        android:id="@+id/button_back_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="-320dp"
         android:layout_marginTop="23dp"
         android:background="@color/white"
-        android:src="@drawable/logo_back"
-        android:layout_marginLeft="-320dp"/>
+        android:src="@drawable/logo_back" />
 
 
     <ImageButton
-        android:layout_below="@id/button_back"
+        android:layout_below="@id/button_back_profile"
         android:id="@+id/profile_picture"
         android:layout_width="146dp"
         android:layout_height="155dp"
@@ -37,14 +37,14 @@
         android:layout_marginTop="30dp"
         android:fontFamily="@font/regular"
         android:hint="Username"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/text"
         app:boxCornerRadiusBottomEnd="9dp"
         app:boxCornerRadiusBottomStart="9dp"
         app:boxCornerRadiusTopEnd="9dp"
         app:boxCornerRadiusTopStart="9dp"
-        app:boxStrokeColor="@color/black"
-        app:boxBackgroundMode="outline"
-        app:hintTextColor="@color/black"
+        app:boxStrokeColor="@color/text"
+
+        app:hintTextColor="@color/text"
        >
 
 
@@ -55,7 +55,7 @@
             android:layout_gravity="center"
             android:fontFamily="@font/regular"
             android:inputType="text"
-            android:textColor="@color/black" />
+            android:textColor="@color/text" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -69,14 +69,13 @@
         android:layout_marginHorizontal="10dp"
         android:fontFamily="@font/regular"
         android:hint="About me"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/text"
         app:boxCornerRadiusBottomEnd="9dp"
         app:boxCornerRadiusBottomStart="9dp"
         app:boxCornerRadiusTopEnd="9dp"
         app:boxCornerRadiusTopStart="9dp"
-        app:boxStrokeColor="@color/black"
-        app:boxBackgroundMode="outline"
-        app:hintTextColor="@color/black">
+        app:boxStrokeColor="@color/text"
+        app:hintTextColor="@color/text">
 
 
         <com.google.android.material.textfield.TextInputEditText
@@ -86,7 +85,7 @@
             android:layout_gravity="center"
             android:fontFamily="@font/regular"
             android:inputType="text"
-            android:textColor="@color/black" />
+            android:textColor="@color/text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -247,14 +246,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/logout"
-        android:layout_marginTop="4dp">
+        android:layout_marginTop="5dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/primary"
+            android:background="@drawable/rounded_corner_profile"
             app:menu="@menu/bottom_nav" />
 
     </LinearLayout>
