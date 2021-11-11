@@ -10,27 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LTEArena">
         <activity
-            android:name=".HomeScreen"
+            android:name=".ProfileSettingActivity"
             android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-        </activity>
-
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+        <activity
+            android:name=".HomeScreen"
+            android:exported="true"/>
         <activity
             android:name=".SplashActivity"
-            android:exported="true">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
+            android:exported="true"/>
 
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />
-
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
