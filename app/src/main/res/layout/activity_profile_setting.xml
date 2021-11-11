@@ -6,8 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ProfileSettingActivity">
 
+    <ImageButton
+        android:id="@+id/button_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:background="@color/white"
+        android:src="@drawable/logo_back"
+        android:layout_marginLeft="-320dp"/>
+
 
     <ImageButton
+        android:layout_below="@id/button_back"
         android:id="@+id/profile_picture"
         android:layout_width="146dp"
         android:layout_height="155dp"
