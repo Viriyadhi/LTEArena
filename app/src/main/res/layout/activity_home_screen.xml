@@ -5,93 +5,110 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeScreen">
-
-    <!--Header-->
-    <RelativeLayout
+    
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <TextView
-            android:id="@+id/name_apps"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="43dp"
-            android:text="LTE Arena"
-            android:textColor="@color/text" />
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/name_apps"
-            android:layout_marginTop="27dp"
-            android:layout_marginRight="300dp"
-            android:src="@drawable/ic_baseline_search_24" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layout_search"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/name_apps"
-            android:layout_marginHorizontal="10dp"
-            android:fontFamily="@font/regular"
-            android:hint="Search Product"
-            android:textColorHint="@color/black"
-            app:boxCornerRadiusBottomEnd="9dp"
-            app:boxCornerRadiusBottomStart="9dp"
-            app:boxCornerRadiusTopEnd="9dp"
-            app:boxCornerRadiusTopStart="9dp"
-            app:boxStrokeColor="@color/black"
-            app:hintTextColor="@color/black">
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txt_search"
+            <!--Header-->
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="62dp"
-                android:layout_gravity="center"
-                android:fontFamily="@font/regular"
-                android:inputType="text"
-                android:textColor="@color/black" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content">
 
-        <!--Main-->
-        <TextView
-            android:id="@+id/choose"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/search"
-            android:layout_marginLeft="59dp"
-            android:layout_marginTop="20dp"
-            android:text="Choose brand"
-            android:textColor="@color/text"
-            android:textSize="16dp"
-            android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/name_apps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="43dp"
+                    android:text="LTE Arena"
+                    android:textColor="@color/text" />
 
-        <GridView
-            android:id="@+id/simpleGridView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/choose"
-            android:numColumns="2" />
+                <ImageView
+                    android:id="@+id/search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name_apps"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginRight="300dp"
+                    android:src="@drawable/ic_baseline_search_24" />
 
-        <!--Footer-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/simpleGridView"
-            android:layout_marginTop="630dp">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_search"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name_apps"
+                    android:layout_marginHorizontal="10dp"
+                    android:fontFamily="@font/regular"
+                    android:hint="Search Product"
+                    android:textColorHint="@color/black"
+                    app:boxCornerRadiusBottomEnd="9dp"
+                    app:boxCornerRadiusBottomStart="9dp"
+                    app:boxCornerRadiusTopEnd="9dp"
+                    app:boxCornerRadiusTopStart="9dp"
+                    app:boxStrokeColor="@color/black"
+                    app:hintTextColor="@color/black">
 
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottom_navigation"
-                style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/primary"
-                app:menu="@menu/bottom_nav" />
 
-        </LinearLayout>
-    </RelativeLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txt_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="62dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/regular"
+                        android:inputType="text"
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--Main-->
+                <TextView
+                    android:id="@+id/choose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/search"
+                    android:layout_marginLeft="59dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Choose brand"
+                    android:textColor="@color/text"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/home_bottom"
+                    android:layout_below="@id/choose"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp" />
+
+                <!--Footer-->
+                <LinearLayout
+                    android:id="@+id/home_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true">
+
+                    <com.google.android.material.bottomnavigation.BottomNavigationView
+                        android:id="@+id/bottom_navigation"
+                        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/primary"
+                        app:menu="@menu/bottom_nav" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
 </RelativeLayout>
