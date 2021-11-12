@@ -12,41 +12,34 @@
         android:theme="@style/Theme.LTEArena"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".PhoneNumberInformationActivity"
-            android:exported="true" />
-
-
+            android:name=".activity.PhonesActivity"
+            android:exported="false" />
         <activity
-            android:name=".AccountInformationActivity"
+            android:name=".activity.PhoneNumberInformationActivity"
             android:exported="true" />
-
-
         <activity
-            android:name=".ProfileSettingActivity"
+            android:name=".activity.AccountInformationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ProfileSettingActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".activity.HomeScreen"
+            android:exported="true" />
+        <activity
+            android:name=".activity.SplashActivity"
             android:exported="true">
-
-        </activity>
-
-        <activity
-            android:name=".HomeScreen"
-            android:exported="true" />
-
-        <activity
-            android:name=".SplashActivity"
-            android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".activity.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activity.LoginActivity"
             android:exported="true" />
     </application>
 

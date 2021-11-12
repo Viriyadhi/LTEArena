@@ -1,4 +1,4 @@
-package com.example.ltearena;
+package com.example.ltearena.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.example.ltearena.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,7 +29,7 @@ public class ProfileSettingActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.page_1:
-                        Intent intent = new Intent(getApplicationContext(), HomeScreen.class);
+                        Intent intent = new Intent(getApplicationContext(), HomeScreen.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(intent);
                 }
                 return true;
