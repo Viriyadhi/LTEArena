@@ -36,7 +36,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/regular"
-        android:hint="Username"
+        android:hint="Name"
         android:textColorHint="@color/text"
         app:boxCornerRadiusBottomEnd="9dp"
         app:boxCornerRadiusBottomStart="9dp"
@@ -59,35 +59,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layout_about"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/layout_username"
-        android:layout_marginHorizontal="10dp"
-        android:fontFamily="@font/regular"
-        android:hint="About me"
-        android:textColorHint="@color/text"
-        app:boxCornerRadiusBottomEnd="9dp"
-        app:boxCornerRadiusBottomStart="9dp"
-        app:boxCornerRadiusTopEnd="9dp"
-        app:boxCornerRadiusTopStart="9dp"
-        app:boxStrokeColor="@color/text"
-        app:hintTextColor="@color/text">
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txt_search"
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:layout_gravity="center"
-            android:fontFamily="@font/regular"
-            android:inputType="text"
-            android:textColor="@color/text" />
-    </com.google.android.material.textfield.TextInputLayout>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -96,7 +67,7 @@
         android:fontFamily="@font/regular"
         android:textColor="#8F66696B"
         android:layout_marginBottom="5dp"
-        android:layout_below="@+id/layout_about"
+        android:layout_below="@+id/layout_username"
         android:layout_marginTop="11dp"
         android:layout_marginStart="27dp"></TextView>
 
@@ -136,33 +107,6 @@
                 android:text="Email Address"
                 android:textAlignment="textStart"
                 android:textColor="#2F4B60"></Button>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="-15dp"
-            android:layout_marginRight="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_gravity="center_vertical"
-                android:layout_width="16dp"
-                android:layout_height="13dp"
-                android:src="@drawable/logo_telephone"></ImageView>
-
-            <Button
-                android:id="@+id/btn_phonenumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#2F4B60"
-                android:text="Phone Number"
-                android:fontFamily="@font/regular"
-                android:textAlignment="textStart"
-                android:background="@drawable/rounded_corner_profile"
-                android:layout_marginStart="10dp"></Button>
 
         </LinearLayout>
 
@@ -243,9 +187,10 @@
 
     <!--Footer-->
     <LinearLayout
+        android:id="@+id/layout_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/logout"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="5dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
