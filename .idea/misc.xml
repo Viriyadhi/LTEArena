@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.333" />
+        <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/drawable/background_detail_phone_specification.xml" value="0.209" />
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/drawable/background_primary.xml" value="0.333" />
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/drawable/bottom_navigation.xml" value="0.333" />
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/drawable/card_view.xml" value="0.333" />
@@ -26,6 +27,7 @@
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/layout/activity_register.xml" value="0.2015625" />
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/layout/activity_splash.xml" value="0.2015625" />
+        <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/layout/detail_phone_specification.xml" value="0.33" />
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/layout/grid_detail.xml" value="0.38697916666666665" />
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/layout/grid_detail_brand.xml" value="0.2526041666666667" />
         <entry key="..\:/Programming/Android Studio Project(S)/LTEArena/app/src/main/res/layout/grid_detail_home.xml" value="0.38697916666666665" />

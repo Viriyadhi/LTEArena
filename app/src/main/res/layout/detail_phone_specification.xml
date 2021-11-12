@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/background_detail_phone_specification"
+            >
+
+            <ImageView
+                android:id="@+id/poster_hp"
+                android:layout_width="164dp"
+                android:layout_height="185dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/ic_launcher" />
+
+
+            <ImageButton
+                android:id="@+id/button_back_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-320dp"
+                android:layout_marginTop="23dp"
+                 android:background="@color/text"
+                android:src="@drawable/logo_back" />
+
+            <TextView
+                android:id="@+id/nama_hp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/poster_hp"
+                android:layout_marginRight="50dp"
+                android:gravity="end"
+                android:text="Nama HP"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="33dp"
+            android:text="Brand"
+            android:textColor="@color/text" />
+
+        <TextView
+            android:id="@+id/brand_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="5dp"
+            android:hint="isi"
+            android:textColor="@color/text" />
+
+        <TextView
+            android:id="@+id/release_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="20dp"
+            android:text="Release Date"
+            android:textColor="@color/text" />
+
+        <TextView
+            android:id="@+id/release_date_detail"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="isi"
+            android:textColor="@color/text" />
+
+        <TextView
+            android:id="@+id/dimension"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="20dp"
+            android:text="Dimension"
+            android:textColor="@color/text"/>
+
+        <TextView
+            android:id="@+id/dimensiondetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="isi"
+            android:layout_marginStart="33dp"
+            android:textColor="@color/text" />
+
+        <TextView
+            android:id="@+id/operating_system"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Operating System"
+            android:layout_marginStart="33dp"
+            android:textColor="@color/text" />
+
+        <TextView
+            android:id="@+id/operating_system_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="isi"
+            android:layout_marginStart="33dp"
+            android:textColor="@color/text" />
+
+        <TextView
+            android:id="@+id/storage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Storage"
+            android:layout_marginStart="33dp"
+            android:textColor="@color/text" />
+
+        <TextView
+            android:id="@+id/storage_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="isi"
+            android:layout_marginStart="33dp"
+            android:textColor="@color/text" />
+
+
+
+    </LinearLayout>
+</RelativeLayout>
