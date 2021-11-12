@@ -54,7 +54,7 @@ public class PhonesActivity extends AppCompatActivity {
         }
 
         recyclerView = findViewById(R.id.home_recycler);
-        txt_search = findViewById(R.id.txt_search_brand);
+        txt_search = findViewById(R.id.txt_search_phone);
 
         txt_search.addTextChangedListener(new TextWatcher() {
             @Override
