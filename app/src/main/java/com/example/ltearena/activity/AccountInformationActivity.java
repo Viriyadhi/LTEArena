@@ -1,7 +1,9 @@
-package com.example.ltearena;
+package com.example.ltearena.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.ltearena.R;
 
 public class AccountInformationActivity extends AppCompatActivity {
 

@@ -11,6 +11,7 @@
     <color name="secondary">#AEBBC5</color>
     <color name="text">#2F4B60</color>
     <color name="detail">#AEBBC5</color>
+    <color name="greyish_blue">#91AEBBC5</color>
 
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#fff</color>
 </resources>

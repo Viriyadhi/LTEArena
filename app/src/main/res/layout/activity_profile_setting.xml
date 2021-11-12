@@ -4,20 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileSettingActivity">
+    tools:context=".activity.ProfileSettingActivity">
 
     <ImageButton
-        android:id="@+id/button_back_profile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="-320dp"
-        android:layout_marginTop="23dp"
-        android:background="@color/white"
-        android:src="@drawable/logo_back" />
-
-
-    <ImageButton
-        android:layout_below="@id/button_back_profile"
         android:id="@+id/profile_picture"
         android:layout_width="146dp"
         android:layout_height="155dp"

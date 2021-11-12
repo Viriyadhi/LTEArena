@@ -1,4 +1,4 @@
-package com.example.ltearena;
+package com.example.ltearena.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,12 +9,11 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.ltearena.R;
 import com.example.ltearena.adapters.BrandAdapter;
 import com.example.ltearena.models.BrandModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -30,7 +29,7 @@ public class HomeScreen extends AppCompatActivity {
     private static final String TAG = HomeScreen.class.getName();
     private RequestQueue mRequestQueue;
     private JsonObjectRequest mRequest;
-    private String url = "https://api-mobilespecs.azharimm.site/v2/brands";
+    private final String url = "https://api-mobilespecs.azharimm.site/v2/brands";
     private ProgressDialog progressDialog;
     private BrandAdapter adapter;
     private RecyclerView recyclerView;
@@ -41,21 +40,13 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
-        ImageButton imageButton = findViewById(R.id.button_back_profile);
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.page_3:
-                        Intent intent = new Intent(getApplicationContext(), ProfileSettingActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), ProfileSettingActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(intent);
                 }
                 return true;
@@ -92,10 +83,9 @@ public class HomeScreen extends AppCompatActivity {
                             BrandModel brandModel = new BrandModel(object.getInt("brand_id"), object.getString("brand_name"), object.getString("detail"));
                             arrayList.add(brandModel);
                         }
-                        adapter = new BrandAdapter(this, arrayList);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
-                        recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setAdapter(adapter);
+
+
+                        setAdapter(arrayList);
 
                         progressDialog.dismiss();
                     } catch (Exception error) {
@@ -108,5 +98,22 @@ public class HomeScreen extends AppCompatActivity {
 
 
         mRequestQueue.add(mRequest);
+    }
+
+    private void setAdapter(List<BrandModel> arrayList) {
+        adapter = new BrandAdapter(this, arrayList);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new BrandAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent(getApplicationContext(), PhonesActivity.class);
+                intent.putExtra("brand", arrayList.get(position).getBrandName());
+                intent.putExtra("url", arrayList.get(position).getDetail());
+                startActivity(intent);
+            }
+        });
     }
 }
