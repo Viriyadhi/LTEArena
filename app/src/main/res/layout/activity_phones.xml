@@ -23,13 +23,13 @@
         android:layout_marginHorizontal="10dp"
         android:fontFamily="@font/regular"
         android:hint="Search Phone"
-        android:textColorHint="@color/greyish_blue"
+        android:textColorHint="@color/dark_blue"
         android:layout_marginTop="15dp"
         app:boxCornerRadiusBottomEnd="9dp"
         app:boxCornerRadiusBottomStart="9dp"
         app:boxCornerRadiusTopEnd="9dp"
         app:boxCornerRadiusTopStart="9dp"
-        app:hintTextColor="@color/greyish_blue">
+        app:hintTextColor="@color/dark_blue">
 
 
         <com.google.android.material.textfield.TextInputEditText

@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 
 import com.android.volley.RequestQueue;
@@ -17,6 +19,7 @@ import com.example.ltearena.R;
 import com.example.ltearena.adapters.BrandAdapter;
 import com.example.ltearena.models.BrandModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -31,9 +34,10 @@ public class HomeScreen extends AppCompatActivity {
     private JsonObjectRequest mRequest;
     private final String url = "https://api-mobilespecs.azharimm.site/v2/brands";
     private ProgressDialog progressDialog;
+    private TextInputEditText txt_search;
     private BrandAdapter adapter;
     private RecyclerView recyclerView;
-    private List<BrandModel> arrayList = new ArrayList();
+    private List<BrandModel> masterArrayList, arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,34 @@ public class HomeScreen extends AppCompatActivity {
         });
 
         recyclerView = findViewById(R.id.home_recycler);
+        txt_search = findViewById(R.id.txt_search_brand);
+
+        txt_search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                arrayList = new ArrayList();
+                arrayList = masterArrayList;
+                setAdapter(arrayList);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                arrayList = new ArrayList();
+                for(BrandModel brandModel : masterArrayList){
+                    if(brandModel.getBrandName() != null && brandModel.getBrandName().toLowerCase().contains(s)) {
+                        arrayList.add(brandModel);
+                    }
+                }
+
+                setAdapter(arrayList);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading...");
         progressDialog.setCancelable(false);
@@ -70,7 +102,7 @@ public class HomeScreen extends AppCompatActivity {
         progressDialog.show();
         //RequestQueue initialized
         mRequestQueue = Volley.newRequestQueue(this);
-        arrayList = new ArrayList<>();
+        masterArrayList = new ArrayList<>();
 
         //String Request initialized
         mRequest = new JsonObjectRequest
@@ -81,10 +113,10 @@ public class HomeScreen extends AppCompatActivity {
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject object = jsonArray.getJSONObject(i);
                             BrandModel brandModel = new BrandModel(object.getInt("brand_id"), object.getString("brand_name"), object.getString("detail"));
-                            arrayList.add(brandModel);
+                            masterArrayList.add(brandModel);
                         }
 
-
+                        arrayList = masterArrayList;
                         setAdapter(arrayList);
 
                         progressDialog.dismiss();
