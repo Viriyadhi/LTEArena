@@ -130,51 +130,10 @@
                 app:cornerRadius="25dp" />
 
             <TextView
-                android:id="@id/other_method"
-                android:layout_width="match_parent"
-
-                android:layout_height="wrap_content"
-                android:layout_below="@id/login"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/regular"
-                android:gravity="center_horizontal"
-                android:text="Other method"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/other"
-                android:layout_width="match_parent"
-
-                android:layout_height="60dp"
-                android:layout_below="@+id/other_method"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:backgroundTint="@color/white"
-                android:fontFamily="@font/regular"
-                android:text="Continue With Google"
-                android:textAllCaps="false"
-                android:textColor="@color/primary"
-                app:cornerRadius="25dp" />
-
-            <View
-                android:id="@+id/garis"
-                android:layout_width="match_parent"
-
-                android:layout_height="1dp"
-                android:layout_below="@id/other"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="50dp"
-                android:background="@color/white"
-                android:fontFamily="@font/regular" />
-
-            <TextView
                 android:id="@+id/signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/garis"
+                android:layout_below="@id/login"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/regular"
                 android:gravity="center"
