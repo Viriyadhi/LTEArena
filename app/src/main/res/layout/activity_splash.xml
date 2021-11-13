@@ -10,24 +10,9 @@
         android:id="@+id/splash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="270dp"
-        android:layout_marginRight="80dp"
-        android:layout_marginLeft="80dp"
-        android:src="@drawable/logo"
-        android:layout_gravity="center">
-    </ImageView>
-
-    <ProgressBar
-        android:id="@+id/progress_loader"
-        android:layout_below="@id/splash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:visibility="visible"
-        android:layout_marginTop="10dp"
-        android:indeterminateTint="@color/primary"
-        android:layout_gravity="center"/>
-
+        android:layout_gravity="center"
+        android:src="@drawable/logo"></ImageView>
 
 
 </RelativeLayout>

@@ -6,11 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ltearena.R;
 import com.example.ltearena.models.BrandModel;
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.List;
 
@@ -50,7 +50,7 @@ public class BrandAdapter extends RecyclerView.Adapter<BrandAdapter.ListViewHold
     }
 
     public class ListViewHolder extends RecyclerView.ViewHolder {
-        private CardView rv_layout;
+        private MaterialCardView rv_layout;
         private TextView tv_title;
 
         public ListViewHolder(View itemView, final OnItemClickListener listener) {

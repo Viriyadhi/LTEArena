@@ -7,11 +7,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ltearena.R;
 import com.example.ltearena.models.PhoneModel;
+import com.google.android.material.card.MaterialCardView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -57,7 +57,7 @@ public class PhoneAdapter extends RecyclerView.Adapter<PhoneAdapter.ListViewHold
     }
 
     public class ListViewHolder extends RecyclerView.ViewHolder {
-        private CardView rv_layout;
+        private MaterialCardView rv_layout;
         private TextView tv_title;
         private ImageView img_phone;
 

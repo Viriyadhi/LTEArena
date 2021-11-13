@@ -15,8 +15,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.ltearena.R;
 import com.example.ltearena.adapters.PhoneAdapter;
-import com.example.ltearena.models.BrandModel;
 import com.example.ltearena.models.PhoneModel;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONArray;
@@ -49,11 +49,11 @@ public class PhonesActivity extends AppCompatActivity {
             brandName = bundle.getString("brand");
             url = bundle.getString("url");
             System.out.println("url: " + url);
+            url = url.replace("http", "https");
 
             tv_brand.setText(brandName + " Phones");
         }
 
-        recyclerView = findViewById(R.id.home_recycler);
         txt_search = findViewById(R.id.txt_search_phone);
 
         txt_search.addTextChangedListener(new TextWatcher() {
@@ -120,10 +120,11 @@ public class PhonesActivity extends AppCompatActivity {
 
                         progressDialog.dismiss();
                     } catch (Exception error) {
-                        System.out.println("Error: " + error.toString());
+                        System.out.println("Error: " + error.getMessage());
+                        progressDialog.dismiss();
                     }
                 }, error -> {
-                    System.out.println("Error: " + error.toString());
+                    System.out.println("Error: " + error.getMessage());
                     progressDialog.dismiss();
                 });
 

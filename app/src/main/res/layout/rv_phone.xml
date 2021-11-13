@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_phone_recycler"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="10dp"
+    android:layout_marginHorizontal="5dp"
     android:layout_marginBottom="10dp"
-    android:elevation="5dp"
-    app:cardBackgroundColor="@android:color/darker_gray"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="10dp"
+    app:strokeColor="@color/dark_blue"
+    app:strokeWidth="1dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#91AEBBC5">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -36,11 +35,12 @@
                 android:layout_marginTop="10dp"
                 android:text="Phone Name"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="18sp"
+                android:textAlignment="center"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
     </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
