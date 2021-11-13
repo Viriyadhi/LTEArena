@@ -16,7 +16,7 @@
         <LinearLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/background_detail_phone_specification"
             android:orientation="vertical">
 
@@ -24,8 +24,8 @@
                 android:id="@+id/btn_back_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="25dp"
                 android:src="@drawable/ic_baseline_arrow_back_ios_24"
                 app:tint="@color/dark_blue" />
 
@@ -41,10 +41,10 @@
                 android:id="@+id/tv_phone_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/img_phone_detail"
                 android:layout_gravity="end"
+                android:layout_margin="20dp"
+                android:textAlignment="textEnd"
                 android:layout_marginTop="15dp"
-                android:layout_marginRight="25dp"
                 android:text="Phone Name"
                 android:textColor="@color/dark_blue"
                 android:textSize="24sp"
@@ -52,110 +52,116 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/brand"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
-            android:layout_marginTop="40dp"
-            android:text="Brand"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/text" />
+            android:padding="25dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_brand_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
-            android:layout_marginTop="5dp"
-            android:textSize="16sp"
-            android:text="Brand"
-            android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Brand"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/release_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
-            android:layout_marginTop="20dp"
-            android:text="Release Date"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="@color/text" />
+            <TextView
+                android:id="@+id/tv_brand_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Brand"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/tv_releaseDate_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
-            android:layout_marginTop="5dp"
-            android:text="Release date"
-            android:textSize="16sp"
-            android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/release_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        <TextView
-            android:id="@+id/dimension"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
-            android:layout_marginTop="20dp"
-            android:text="Dimension"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="@color/black" />
+                android:layout_marginTop="15dp"
+                android:text="Release Date"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tv_dimension_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
-            android:layout_marginTop="5dp"
-            android:hint="Dimension"
-            android:textSize="16sp"
-            android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/tv_releaseDate_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        <TextView
-            android:id="@+id/operating_system"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
-            android:layout_marginTop="20dp"
-            android:text="Operating System"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/text" />
+                android:layout_marginTop="5dp"
+                android:text="Release date"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/tv_operatingSystem_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
-            android:textSize="16sp"
-            android:layout_marginTop="5dp"
-            android:text="Operating System"
-            android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/dimension"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        <TextView
-            android:id="@+id/storage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
-            android:layout_marginTop="20dp"
-            android:text="Storage"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/text" />
+                android:layout_marginTop="15dp"
+                android:text="Dimension"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tv_storage_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
-            android:layout_marginTop="5dp"
-            android:text="Storage"
-            android:textSize="16sp"
-            android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/tv_dimension_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
+                android:layout_marginTop="5dp"
+                android:hint="Dimension"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/operating_system"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="15dp"
+                android:text="Operating System"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_operatingSystem_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="5dp"
+                android:text="Operating System"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/storage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="15dp"
+                android:text="Storage"
+                android:textColor="@color/text"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_storage_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="5dp"
+                android:text="Storage"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
