@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.ltearena.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -21,7 +22,7 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_setting);
+        setContentView(R.layout.activity_profile);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -41,11 +42,11 @@ public class ProfileActivity extends AppCompatActivity {
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
-        TextInputEditText txt_name = findViewById(R.id.txt_username);
-        Button btn_email = findViewById(R.id.btn_email);
-        LinearLayout logout = findViewById(R.id.logout);
+        TextView tv_name = findViewById(R.id.tv_name_profile);
+        TextView tv_email = findViewById(R.id.tv_email_profile);
+        Button btn_logout = findViewById(R.id.btn_logout_profile);
 
-        logout.setOnClickListener(new View.OnClickListener() {
+        btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 auth.signOut();
@@ -55,7 +56,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        txt_name.setText(user.getDisplayName());
-        btn_email.setText(user.getEmail());
+        tv_name.setText(user.getDisplayName());
+        tv_email.setText(user.getEmail());
     }
 }
