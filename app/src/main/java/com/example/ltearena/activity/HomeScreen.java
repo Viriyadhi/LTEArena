@@ -50,7 +50,9 @@ public class HomeScreen extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.page_2:
-                        Intent intent = new Intent(getApplicationContext(), ProfileSettingActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                        overridePendingTransition(0, 0);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(intent);
                 }
                 return true;

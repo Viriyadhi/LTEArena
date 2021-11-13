@@ -1,71 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:orientation="vertical"
-    android:fillViewport="true">
+    tools:context=".activity.PhoneDetailActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:background="@drawable/background_detail_phone_specification"
-            >
-
-            <ImageView
-                android:id="@+id/poster_hp"
-                android:layout_width="164dp"
-                android:layout_height="185dp"
-                android:layout_centerInParent="true"
-                android:src="@mipmap/ic_launcher" />
-
+            android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/button_back_phone"
-                android:layout_width="match_parent"
+                android:id="@+id/btn_back_detail"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-320dp"
-                android:layout_marginTop="23dp"
-                 android:background="@color/text"
-                android:src="@drawable/logo_back" />
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                app:tint="@color/dark_blue" />
+
+            <ImageView
+                android:id="@+id/img_phone_detail"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_baseline_phone_android_24" />
 
             <TextView
-                android:id="@+id/nama_hp"
-                android:layout_width="match_parent"
+                android:id="@+id/tv_phone_detail"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/poster_hp"
-                android:layout_marginRight="50dp"
-                android:gravity="end"
-                android:text="Nama HP"
-                android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:layout_below="@id/img_phone_detail"
+                android:layout_gravity="end"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:text="Phone Name"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/brand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
             android:layout_marginStart="33dp"
+            android:layout_marginTop="40dp"
             android:text="Brand"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:textColor="@color/text" />
 
         <TextView
-            android:id="@+id/brand_detail"
+            android:id="@+id/tv_brand_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="33dp"
             android:layout_marginTop="5dp"
-            android:hint="isi"
-            android:textColor="@color/text" />
+            android:textSize="16sp"
+            android:text="Brand"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/release_date"
@@ -74,16 +80,19 @@
             android:layout_marginStart="33dp"
             android:layout_marginTop="20dp"
             android:text="Release Date"
+            android:textStyle="bold"
+            android:textSize="16sp"
             android:textColor="@color/text" />
 
         <TextView
-            android:id="@+id/release_date_detail"
+            android:id="@+id/tv_releaseDate_detail"
             android:layout_width="wrap_content"
-            android:layout_marginStart="33dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
             android:layout_marginTop="5dp"
-            android:hint="isi"
-            android:textColor="@color/text" />
+            android:text="Release date"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/dimension"
@@ -92,54 +101,61 @@
             android:layout_marginStart="33dp"
             android:layout_marginTop="20dp"
             android:text="Dimension"
-            android:textColor="@color/text"/>
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
 
         <TextView
-            android:id="@+id/dimensiondetail"
+            android:id="@+id/tv_dimension_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:hint="isi"
             android:layout_marginStart="33dp"
-            android:textColor="@color/text" />
+            android:layout_marginTop="5dp"
+            android:hint="Dimension"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/operating_system"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
             android:layout_marginTop="20dp"
             android:text="Operating System"
-            android:layout_marginStart="33dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:textColor="@color/text" />
 
         <TextView
-            android:id="@+id/operating_system_detail"
+            android:id="@+id/tv_operatingSystem_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:hint="isi"
             android:layout_marginStart="33dp"
-            android:textColor="@color/text" />
+            android:textSize="16sp"
+            android:layout_marginTop="5dp"
+            android:text="Operating System"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/storage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
             android:layout_marginTop="20dp"
             android:text="Storage"
-            android:layout_marginStart="33dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:textColor="@color/text" />
 
         <TextView
-            android:id="@+id/storage_detail"
+            android:id="@+id/tv_storage_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:hint="isi"
             android:layout_marginStart="33dp"
-            android:textColor="@color/text" />
-
-
+            android:layout_marginTop="5dp"
+            android:text="Storage"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
 
     </LinearLayout>
-</RelativeLayout>
+</androidx.core.widget.NestedScrollView>
