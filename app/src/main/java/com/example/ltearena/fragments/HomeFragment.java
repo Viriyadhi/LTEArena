@@ -1,24 +1,28 @@
-package com.example.ltearena.activity;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package com.example.ltearena.fragments;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.ltearena.R;
+import com.example.ltearena.activity.PhonesActivity;
 import com.example.ltearena.adapters.BrandAdapter;
 import com.example.ltearena.models.BrandModel;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONArray;
@@ -27,9 +31,22 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeScreen extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link HomeFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class HomeFragment extends Fragment {
 
-    private static final String TAG = HomeScreen.class.getName();
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
     private RequestQueue mRequestQueue;
     private JsonObjectRequest mRequest;
     private final String url = "https://api-mobilespecs.azharimm.site/v2/brands";
@@ -39,28 +56,50 @@ public class HomeScreen extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<BrandModel> masterArrayList, arrayList;
 
+    public HomeFragment() {
+        // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment HomeFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static HomeFragment newInstance(String param1, String param2) {
+        HomeFragment fragment = new HomeFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_screen);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.page_2:
-                        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
-                        overridePendingTransition(0, 0);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                        startActivity(intent);
-                }
-                return true;
-            }
-        });
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false);
+    }
 
-        recyclerView = findViewById(R.id.home_recycler);
-        txt_search = findViewById(R.id.txt_search_brand);
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        recyclerView = view.findViewById(R.id.home_recycler);
+        txt_search = view.findViewById(R.id.txt_search_brand);
 
         txt_search.addTextChangedListener(new TextWatcher() {
             @Override
@@ -88,7 +127,7 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
-        progressDialog = new ProgressDialog(this);
+        progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Loading...");
         progressDialog.setCancelable(false);
         Runnable runnable = new Runnable() {
@@ -103,7 +142,7 @@ public class HomeScreen extends AppCompatActivity {
     private void getData() {
         progressDialog.show();
         //RequestQueue initialized
-        mRequestQueue = Volley.newRequestQueue(this);
+        mRequestQueue = Volley.newRequestQueue(getActivity());
         masterArrayList = new ArrayList<>();
 
         //String Request initialized
@@ -135,15 +174,15 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     private void setAdapter(List<BrandModel> arrayList) {
-        adapter = new BrandAdapter(this, arrayList);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
+        adapter = new BrandAdapter(getActivity(), arrayList);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
         adapter.setOnItemClickListener(new BrandAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                Intent intent = new Intent(getApplicationContext(), PhonesActivity.class);
+                Intent intent = new Intent(getActivity(), PhonesActivity.class);
                 intent.putExtra("brand", arrayList.get(position).getBrandName());
                 intent.putExtra("url", arrayList.get(position).getDetail());
                 startActivity(intent);

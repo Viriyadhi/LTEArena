@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
@@ -17,7 +19,6 @@ import com.android.volley.toolbox.Volley;
 import com.example.ltearena.R;
 import com.example.ltearena.adapters.PhoneAdapter;
 import com.example.ltearena.models.PhoneModel;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONArray;
@@ -41,6 +42,14 @@ public class PhonesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phones);
+
+        ImageButton btn_back = findViewById(R.id.btn_back_phone);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         tv_brand = findViewById(R.id.tv_brand_phones);
         recyclerView = findViewById(R.id.phones_recycler);
