@@ -15,9 +15,6 @@
             android:name=".activity.PhonesActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.AccountInformationActivity"
-            android:exported="true" />
-        <activity
             android:name=".activity.ProfileActivity"
             android:exported="true"></activity>
         <activity
