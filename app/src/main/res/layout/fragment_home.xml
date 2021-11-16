@@ -34,7 +34,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/regular"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="Search Phone"
+                android:hint="Search Brand"
                 android:textColorHint="@color/dark_blue"
                 app:boxStrokeColor="@color/dark_blue"
                 app:boxCornerRadiusBottomEnd="9dp"

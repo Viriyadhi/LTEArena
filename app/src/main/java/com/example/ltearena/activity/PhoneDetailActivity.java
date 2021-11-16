@@ -1,12 +1,15 @@
 package com.example.ltearena.activity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,20 +17,24 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.ltearena.R;
-import com.example.ltearena.models.PhoneModel;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 public class PhoneDetailActivity extends AppCompatActivity {
     private String image, phone, brand, releaseDate, storage, operatingSystem, dimension;
     private TextView tv_phone, tv_brand, tv_releaseDate, tv_storage, tv_operatingSystem, tv_dimension;
     private ImageView img_phone;
-    private ImageButton btn_back;
-    private String url;
+    private ImageButton btn_back, btn_favorite;
+    private String url, slug;
+    private boolean isFavorite;
     private ProgressDialog progressDialog;
     private RequestQueue mRequestQueue;
     private JsonObjectRequest mRequest;
@@ -45,6 +52,7 @@ public class PhoneDetailActivity extends AppCompatActivity {
         tv_operatingSystem = findViewById(R.id.tv_operatingSystem_detail);
         tv_releaseDate = findViewById(R.id.tv_releaseDate_detail);
         btn_back = findViewById(R.id.btn_back_detail);
+        btn_favorite = findViewById(R.id.btn_favorite_detail);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading...");
@@ -52,6 +60,7 @@ public class PhoneDetailActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
+            slug = bundle.getString("slug");
             url = bundle.getString("url");
             System.out.println("url: " + url);
             url = url.replace("http", "https");
@@ -60,7 +69,20 @@ public class PhoneDetailActivity extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                onBackPressed();
+            }
+        });
+
+        btn_favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isFavorite) {
+                    isFavorite = false;
+                    btn_favorite.setImageResource(R.drawable.ic_baseline_favorite_border_24);
+                } else {
+                    isFavorite = true;
+                    btn_favorite.setImageResource(R.drawable.ic_baseline_favorite_24);
+                }
             }
         });
 
@@ -69,6 +91,25 @@ public class PhoneDetailActivity extends AppCompatActivity {
 
     private void getData() {
         progressDialog.show();
+
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference favoritesRef = FirebaseDatabase.getInstance().getReference().child("favorites").child(currentUser.getUid());
+        favoritesRef.child(slug).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    btn_favorite.setImageResource(R.drawable.ic_baseline_favorite_24);
+                    isFavorite = true;
+                }
+
+                System.out.println("is favorite " + isFavorite);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         //RequestQueue initialized
         mRequestQueue = Volley.newRequestQueue(this);
@@ -115,5 +156,13 @@ public class PhoneDetailActivity extends AppCompatActivity {
         tv_storage.setText(storage);
         tv_operatingSystem.setText(operatingSystem);
         tv_dimension.setText(dimension);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent();
+        intent.putExtra("isFavorite", isFavorite);
+        setResult(RESULT_OK, intent);
+        super.onBackPressed();
     }
 }

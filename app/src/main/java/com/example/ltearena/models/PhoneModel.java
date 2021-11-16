@@ -2,12 +2,17 @@ package com.example.ltearena.models;
 
 public class PhoneModel {
 
-    private String phoneName, image, detailUrl;
+    private String phoneName, image, detailUrl, slug;
 
-    public PhoneModel(String phoneName, String image, String detailUrl) {
+    public PhoneModel() {
+
+    }
+
+    public PhoneModel(String phoneName, String image, String detailUrl, String slug) {
         this.phoneName = phoneName;
         this.image = image;
         this.detailUrl = detailUrl;
+        this.slug = slug;
     }
 
     public String getPhoneName() {
@@ -32,5 +37,13 @@ public class PhoneModel {
 
     public void setDetailUrl(String detailUrl) {
         this.detailUrl = detailUrl;
+    }
+
+    public String getSlug() {
+        return slug;
+    }
+
+    public void setSlug(String slug) {
+        this.slug = slug;
     }
 }
