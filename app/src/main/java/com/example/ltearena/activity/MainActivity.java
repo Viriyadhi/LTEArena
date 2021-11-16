@@ -2,13 +2,13 @@ package com.example.ltearena.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.ltearena.R;
+import com.example.ltearena.fragments.FavoritesFragment;
 import com.example.ltearena.fragments.HomeFragment;
 import com.example.ltearena.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -45,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
                             //if the other fragment is visible, profile it.
                             fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("profile")).commit();
                         }
+                        if (fragmentManager.findFragmentByTag("favorites") != null) {
+                            //if the other fragment is visible, hide it.
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("favorites")).commit();
+                        }
                         break;
                     case R.id.profile_nav:
                         if (fragmentManager.findFragmentByTag("profile") != null) {
@@ -58,6 +62,28 @@ public class MainActivity extends AppCompatActivity {
                         if (fragmentManager.findFragmentByTag("home") != null) {
                             //if the other fragment is visible, hide it.
                             fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("home")).commit();
+                        }
+                        if (fragmentManager.findFragmentByTag("favorites") != null) {
+                            //if the other fragment is visible, hide it.
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("favorites")).commit();
+                        }
+                        break;
+                    case R.id.favorites_nav:
+                        if (fragmentManager.findFragmentByTag("favorites") != null) {
+                            //if the fragment exists, show it.
+                            fragmentManager.beginTransaction().show(fragmentManager.findFragmentByTag("favorites")).commit();
+                        } else {
+                            //if the fragment does not exist, add it to fragment manager.
+                            FavoritesFragment favoritesFragment = new FavoritesFragment();
+                            fragmentManager.beginTransaction().add(R.id.fragment_container, favoritesFragment, "favorites").commit();
+                        }
+                        if (fragmentManager.findFragmentByTag("home") != null) {
+                            //if the other fragment is visible, hide it.
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("home")).commit();
+                        }
+                        if (fragmentManager.findFragmentByTag("profile") != null) {
+                            //if the other fragment is visible, profile it.
+                            fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("profile")).commit();
                         }
                         break;
                 }
