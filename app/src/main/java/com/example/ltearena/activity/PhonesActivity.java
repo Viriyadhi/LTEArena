@@ -3,6 +3,7 @@ package com.example.ltearena.activity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,6 +14,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
@@ -41,12 +43,13 @@ public class PhonesActivity extends AppCompatActivity {
     private TextInputEditText txt_search;
     private RecyclerView recyclerView;
     private String brandName, url;
-    private ProgressDialog progressDialog;
     private RequestQueue mRequestQueue;
     private JsonObjectRequest mRequest;
     private PhoneAdapter adapter;
     private List<PhoneModel> masterArrayList, arrayList;
     private PhoneModel phoneModel;
+    private NestedScrollView scrollView;
+    private ProgressBar progressBar;
 
     private static final int REQUEST_CODE = 101;
 
@@ -65,6 +68,11 @@ public class PhonesActivity extends AppCompatActivity {
 
         tv_brand = findViewById(R.id.tv_brand_phones);
         recyclerView = findViewById(R.id.phones_recycler);
+        txt_search = findViewById(R.id.txt_search_phone);
+        scrollView = findViewById(R.id.scroll_phones);
+        progressBar = findViewById(R.id.progress_circular_phones);
+
+        scrollView.setVisibility(View.GONE);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -75,8 +83,6 @@ public class PhonesActivity extends AppCompatActivity {
 
             tv_brand.setText(brandName + " Phones");
         }
-
-        txt_search = findViewById(R.id.txt_search_phone);
 
         txt_search.addTextChangedListener(new TextWatcher() {
             @Override
@@ -104,10 +110,6 @@ public class PhonesActivity extends AppCompatActivity {
             }
         });
 
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading...");
-        progressDialog.setCancelable(false);
-
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -118,11 +120,9 @@ public class PhonesActivity extends AppCompatActivity {
     }
 
     private void getData() {
-        progressDialog.show();
         //RequestQueue initialized
         mRequestQueue = Volley.newRequestQueue(this);
         masterArrayList = new ArrayList<>();
-
 
         //String Request initialized
         mRequest = new JsonObjectRequest
@@ -140,16 +140,18 @@ public class PhonesActivity extends AppCompatActivity {
                         arrayList = masterArrayList;
                         setAdapter(arrayList);
 
-                        progressDialog.dismiss();
+                        progressBar.setVisibility(View.GONE);
+                        scrollView.setVisibility(View.VISIBLE);
                     } catch (Exception error) {
                         System.out.println("Error: " + error.getMessage());
-                        progressDialog.dismiss();
+                        progressBar.setVisibility(View.GONE);
+                        scrollView.setVisibility(View.VISIBLE);
                     }
                 }, error -> {
                     System.out.println("Error: " + error.getMessage());
-                    progressDialog.dismiss();
+                    progressBar.setVisibility(View.GONE);
+                    scrollView.setVisibility(View.VISIBLE);
                 });
-
 
         mRequestQueue.add(mRequest);
     }
@@ -167,6 +169,7 @@ public class PhonesActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), PhoneDetailActivity.class);
                 intent.putExtra("url", phoneModel.getDetailUrl());
                 intent.putExtra("slug", phoneModel.getSlug());
+                intent.putExtra("image", phoneModel.getImage());
                 startActivityForResult(intent, REQUEST_CODE);
             }
         });

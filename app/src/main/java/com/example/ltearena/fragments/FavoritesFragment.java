@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +18,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.example.ltearena.R;
 import com.example.ltearena.activity.PhoneDetailActivity;
@@ -32,7 +34,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,13 +57,14 @@ public class FavoritesFragment extends Fragment {
 
     private static final int REQUEST_CODE = 101;
 
-    private String url, slug;
+    private String slug;
     private TextInputEditText txt_search;
     private RecyclerView recyclerView;
-    private ProgressDialog progressDialog;
     private PhoneAdapter adapter;
     private List<PhoneModel> masterArrayList, arrayList;
     private PhoneModel phoneModel;
+    private NestedScrollView scrollView;
+    private ProgressBar progressBar;
 
     public FavoritesFragment() {
         // Required empty public constructor
@@ -104,6 +110,10 @@ public class FavoritesFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.favorites_recycler);
         txt_search = view.findViewById(R.id.txt_search_favorites);
+        scrollView = view.findViewById(R.id.scroll_favorites);
+        progressBar = view.findViewById(R.id.progress_circular_favorites);
+
+        scrollView.setVisibility(View.GONE);
 
         txt_search.addTextChangedListener(new TextWatcher() {
             @Override
@@ -131,10 +141,6 @@ public class FavoritesFragment extends Fragment {
             }
         });
 
-        progressDialog = new ProgressDialog(getActivity());
-        progressDialog.setMessage("Loading...");
-        progressDialog.setCancelable(false);
-
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -144,24 +150,17 @@ public class FavoritesFragment extends Fragment {
         runnable.run();
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        getData();
-    }
-
     private void getData() {
-        masterArrayList = new ArrayList<>();
-        arrayList = new ArrayList<>();
-        progressDialog.show();
-
         try {
             FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
             DatabaseReference favoritesRef = FirebaseDatabase.getInstance().getReference("favorites").child(currentUser.getUid());
 
-            favoritesRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            favoritesRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    masterArrayList = new ArrayList<>();
+                    arrayList = new ArrayList<>();
+
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         PhoneModel phoneModel = dataSnapshot.getValue(PhoneModel.class);
                         masterArrayList.add(phoneModel);
@@ -173,12 +172,15 @@ public class FavoritesFragment extends Fragment {
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
-
+                    System.out.println("error: " + error.getMessage());
+                    progressBar.setVisibility(View.GONE);
+                    scrollView.setVisibility(View.VISIBLE);
                 }
             });
         } catch (Exception e) {
             System.out.println(e.toString());
-            progressDialog.dismiss();
+            progressBar.setVisibility(View.GONE);
+            scrollView.setVisibility(View.VISIBLE);
         }
     }
 
@@ -201,41 +203,7 @@ public class FavoritesFragment extends Fragment {
             }
         });
 
-        progressDialog.dismiss();
-    }
-
-    private void toggleFavorite(boolean isFavorite) {
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference favoritesRef = FirebaseDatabase.getInstance().getReference().child("favorites").child(currentUser.getUid()).child(phoneModel.getSlug());
-
-        if (isFavorite) {
-            favoritesRef.setValue(phoneModel);
-        } else {
-            favoritesRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                        dataSnapshot.getRef().removeValue();
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-        }
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (resultCode == RESULT_OK) {
-            if (requestCode == REQUEST_CODE) {
-                boolean isFavorite = data.getBooleanExtra("isFavorite", false);
-                toggleFavorite(isFavorite);
-            }
-        }
+        progressBar.setVisibility(View.GONE);
+        scrollView.setVisibility(View.VISIBLE);
     }
 }

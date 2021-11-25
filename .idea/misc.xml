@@ -42,8 +42,13 @@
         <entry key="..\:/Sarah/LTEArena/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Sarah/LTEArena/app/src/main/res/layout/rv_phone.xml" value="0.13020833333333334" />
         <entry key="..\:/Sarah/LTEArena/app/src/main/res/menu/bottom_nav.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/Kevin RF/Dev/Sekolah/Android/LTEArena/app/src/main/res/layout/activity_phone_detail.xml" value="0.6" />
-        <entry key="..\:/Users/Kevin RF/Dev/Sekolah/Android/LTEArena/app/src/main/res/layout/activity_phones.xml" value="0.1911231884057971" />
+        <entry key="..\:/Users/Kevin RF/Dev/Sekolah/Android/LTEArena/app/src/main/res/layout/activity_login.xml" value="0.2128623188405797" />
+        <entry key="..\:/Users/Kevin RF/Dev/Sekolah/Android/LTEArena/app/src/main/res/layout/activity_main.xml" value="0.2128623188405797" />
+        <entry key="..\:/Users/Kevin RF/Dev/Sekolah/Android/LTEArena/app/src/main/res/layout/activity_phone_detail.xml" value="0.264" />
+        <entry key="..\:/Users/Kevin RF/Dev/Sekolah/Android/LTEArena/app/src/main/res/layout/activity_phones.xml" value="0.264" />
+        <entry key="..\:/Users/Kevin RF/Dev/Sekolah/Android/LTEArena/app/src/main/res/layout/activity_register.xml" value="0.2128623188405797" />
+        <entry key="..\:/Users/Kevin RF/Dev/Sekolah/Android/LTEArena/app/src/main/res/layout/fragment_favorites.xml" value="0.2128623188405797" />
+        <entry key="..\:/Users/Kevin RF/Dev/Sekolah/Android/LTEArena/app/src/main/res/layout/fragment_home.xml" value="0.2128623188405797" />
         <entry key="..\:/Users/Sarah Firyal/Dev/Sekolah/Android/LTEArena/app/src/main/res/drawable/background_detail_phone_specification.xml" value="0.19583333333333333" />
         <entry key="..\:/Users/Sarah Firyal/Dev/Sekolah/Android/LTEArena/app/src/main/res/drawable/card_view.xml" value="0.1" />
         <entry key="..\:/Users/Sarah Firyal/Dev/Sekolah/Android/LTEArena/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.19583333333333333" />
